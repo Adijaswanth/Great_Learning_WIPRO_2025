@@ -1,0 +1,27 @@
+# Eclipse workspace metadata
+.metadata/
+.classpath
+.project
+.settings/
+
+# Build & output folders
+target/
+build/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs & temp files
+*.log
+*.tmp
+
+# IntelliJ (if ever used)
+.idea/
+*.iml
+
+# OneDrive unwanted files
+~$*
+desktop.ini
+
+.sonarlint/
