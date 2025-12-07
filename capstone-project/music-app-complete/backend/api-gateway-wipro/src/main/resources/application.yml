@@ -1,0 +1,18 @@
+server:
+  port: 9090
+
+routes:
+  user-service: http://localhost:8081
+  song-service: http://localhost:8082
+  playlist-service: http://localhost:8083
+  admin-service: http://localhost:8084
+  notification-service: http://localhost:8090
+
+jwt:
+  secret: VerySecretKeyForDev12345
+  expiry: 3600
+
+spring:
+  web:
+    resources:
+      static-locations: classpath:/static/

@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Admin Dashboard</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<div class="container"><h2>Admin Dashboard</h2>
+<button id="addSong">Add dummy song</button>
+<ul id="result"></ul>
+</div>
+<script>
+const token = localStorage.getItem('token');
+if(!token){ window.location.href='/static/admin-login.html'; }
+document.getElementById('addSong').addEventListener('click', async ()=>{
+  const payload = {name:'New Song '+Date.now(), singer:'Admin', album:'Admin Album'};
+  const res = await fetch('/api/songs', {method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+token}, body: JSON.stringify(payload)});
+  const rtext = await res.text();
+  document.getElementById('result').innerText = 'Response: ' + (res.ok ? rtext : ('ERROR: '+rtext));
+});
+</script>
+</body></html>
